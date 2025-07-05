@@ -1,3 +1,14 @@
-kv_namespaces = [
-  { id = "MY_KV", binding="MY_KV" }
-]
+name = "portfolio-remix"
+compatibility_date = "2025-07-04"
+
+[build]
+command = "npm run build"
+upload.format = "directory"
+upload.dir = "dist"
+
+[site]
+bucket = "./dist"
+entry-point = "functions"
+
+[env.production]
+vars = { NODE_ENV = "production" }
